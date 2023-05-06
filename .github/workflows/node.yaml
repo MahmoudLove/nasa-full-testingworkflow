@@ -1,4 +1,4 @@
-name: NASA PROJECT WORKFLOW
+name: NASA PROJECT WORKFLOW 2
 on:
   push:
     branches: [master]
