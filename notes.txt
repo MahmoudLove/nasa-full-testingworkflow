@@ -1,0 +1,48 @@
+Heads up! If you're using the default Windows shell, the syntax to set an environment variable like PORT is slightly different than what we saw in the previous video. To set PORT in your package.json on Windows, you'll want to write:
+
+"start": "set PORT=5000&& node src/server.js"
+
+Instead of:
+
+"start": "PORT=5000 node src/server.js"
+
+Alternatively, there's the cross-env NPM package which will work all platforms. Both options work!     // https://www.npmjs.com/package/cross-env
+
+"serverMethod1": "cd server && npm run watch", && w8 for first commant to complete then run the after
+"grouped": "npm run server & npm run client" , & run the  first commant in the background and the other 
+"build": "BUILD_PATH=../server/public react-scripts build", works in react script version more than 4.0.2
+layer architecture = data access - buisinuess logic - user InterFace design principle Seperation of concerns (SOC)
+unix time format time with millisecs untill that date 
+moment package from npm for dates
+
+>const date =new Date("january 17,2030  ") isNaN call valueOf() on what ever inside it by  default and return unix time stamp
+undefined
+> date.valueOf()
+1894831200000
+> isNan(date)
+Uncaught ReferenceError: isNan is not defined
+> isNaN(date)
+false
+> isNaN(date.valueOf())
+false
+
+launch.launchDate = new Date(launch.launchDate);
+launch.launchDate.toString() === 'Invalid Date'    if date isnot a valid date or even not a date will return this
+
+body: JSON.stringify(launch), body must be json and so headers must be written
+headers: {
+'Content-Type': 'application/json',
+},
+
+if there is an error in the response response.ok wont be set at all 
+
+test fexture how test is set up in module or individual test
+assertion function allow us to test for cetain thing
+mocking testing data wont affect the data base or atleast temporarly
+if using htpp any one using our local network can get get access to our data using packet analysis tool (wire shark)
+https uses under the hood the encrypting power of ssl and tls(the successor of ssl) 
+https is same as http but wrapped in encrypted connection by tls only domain name and port is exposed as plain text
+for data to be encrypted we need ssl or tls certificate(verify owership brower to sending any data) this  verify that the server is what we are talking to unlike man in the middle attacks (some one pretends to be the server who has the key to encrypt the data)
+certificate authority is what does that and it's trusted by browser (https://letsencrypt.org/getting-started/)
+self-signed certificate is self made https but with out global certificate that primary prevent man in the middle attacks (good in dev) and browswer will give warning
+ca-signed certificate (good for prod) trusted by most clients in web
