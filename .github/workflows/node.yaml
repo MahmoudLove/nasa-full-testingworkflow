@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: use node js version 16
@@ -16,5 +16,3 @@ jobs:
           node-version: '16'
       - run: npm install
       - run: npm run build --prefix client
-  deploy:
-    needs: build
