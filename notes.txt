@@ -46,3 +46,35 @@ for data to be encrypted we need ssl or tls certificate(verify owership brower t
 certificate authority is what does that and it's trusted by browser (https://letsencrypt.org/getting-started/)
 self-signed certificate is self made https but with out global certificate that primary prevent man in the middle attacks (good in dev) and browswer will give warning
 ca-signed certificate (good for prod) trusted by most clients in web
+name: NASA PROJECT WORKFLOW
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs_on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: use node js version 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - run: npm install
+      - run: npm run build --prefix client
+  deploy:
+    needs: build
+
+
+
+SQL
+types of data bases
+1 ) relational
+2 ) document
+3 ) key:value  - reddis cd dynamo db
+4 ) graph very complicated ex.network wanna see how users are connected to one another
+5 ) wide columnar like apashi casandra
+
+declarative(sql -python) lan just what will happen (i do) / imperative(java-python) lan how will happen (i do)
